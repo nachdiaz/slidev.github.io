@@ -14,6 +14,9 @@
     --grey9: #fafafa;
     --font: 'Lato', sans-serif;
     --box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.25);
+    --grey0: #fafafa;
+    --grey9: #000016;
+    --transparent: rgb(104 159 239 / 17%);
 }
 
 * {
@@ -34,6 +37,11 @@ header {
     justify-content: space-between;
     padding: .7rem;
     align-items: center;
+}
+
+header img {
+    max-width: 8rem;
+    width: 8rem;
 }
 
 header .hamburger {
@@ -57,9 +65,9 @@ header .nav ul li a {
     display: block;
     padding: .7rem 3rem;
     font-weight: 700;
-    color: var(--grey0);
     text-decoration: none;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    color: var(--primary);
 }
 
 header .nav ul li a.destacado {
@@ -123,8 +131,12 @@ header .nav.active ul li a {
     padding: .5rem;
 }
 
+header .nav.active ul li a.destacado {
+    color: var(--secondary);
+}
+
 header .nav ul li a:hover {
-    color: var(--grey2);
+    color: var(--grey9)!important;
 }
 
 @media(min-width:70rem) {
@@ -151,7 +163,7 @@ header .nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--grey9);
+    color: white;
     background-image: url(../img/hero.jpg);
     background-position: center center;
     background-size: cover;
@@ -187,13 +199,11 @@ header .nav ul li a:hover {
 }
 
 .servicios>h2 {
-    color: var(--grey9);
     font-size: 4rem;
     font-weight: 900;
 }
 
 .servicios>p {
-    color: var(--grey9);
     max-width: 50rem;
     font-size: 1.3rem;
     font-weight: 300;
@@ -207,8 +217,7 @@ header .nav ul li a:hover {
 }
 
 .servicios>div article {
-    color: var(--grey7);
-    background: rgba(255, 255, 255, .1);
+    background: var(--transparent);
     padding: 1rem;
     border-radius: .5rem;
     min-width: 24rem;
@@ -220,10 +229,13 @@ header .nav ul li a:hover {
 }
 
 .servicios>div article h3 {
-    color: var(--grey9);
     font-size: 1.7rem;
     font-weight: 900;
     margin: .5rem 0 1rem;
+}
+
+.servicios>div article p {
+    color: var(--grey6);
 }
 
 .servicios>div article img {
@@ -255,13 +267,11 @@ header .nav ul li a:hover {
 }
 
 .tecnologia .tech div>h2 {
-    color: var(--grey9);
     font-size: 4rem;
     font-weight: 900;
 }
 
 .tecnologia .tech div>p {
-    color: var(--grey9);
     max-width: 50rem;
     font-size: 1.3rem;
     font-weight: 300;
@@ -276,7 +286,7 @@ header .nav ul li a:hover {
 .tecnologia .tech ul li {
     width: 10rem;
     height: 10rem;
-    background: rgba(255, 255, 255, .1);
+    background: var(--transparent);
     border-radius: 15rem;
     display: flex;
     justify-content: center;
@@ -289,6 +299,11 @@ header .nav ul li a:hover {
 
 .tecnologia .tech ul li img {
     max-width: 100%;
+}
+
+.tecnologia .tech ul li:nth-of-type(2) img,
+.tecnologia .tech ul li:nth-of-type(3) img {
+    filter: invert(1)
 }
 
 .tecnologia .platforms {
@@ -310,7 +325,7 @@ header .nav ul li a:hover {
 }
 
 .tecnologia .platforms ul li {
-    background: rgba(255, 255, 255, .1);
+    background: var(--transparent);
     padding: 1rem 2rem;
     font-size: 2rem;
     margin: .5rem 1rem;
@@ -618,10 +633,10 @@ footer nav ul li a:hover {
 }
 
 .firuletes svg {
-    fill: white;
+    fill: var(--grey9);
     z-index: 0;
     opacity: .1;
-    stroke: white;
+    stroke: var(--grey9);
     display: block;
     vertical-align: middle;
 }
